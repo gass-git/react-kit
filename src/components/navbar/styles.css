@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 :root {
-  --light-green: rgb(69, 210, 69);
-  --green: rgb(58, 161, 58);
+  --light-green: rgb(116, 221, 116);
+  --green: rgb(32, 98, 32);
 }
 
 .wrapper {
@@ -21,8 +21,8 @@
   height: 55px;
   max-width: 780px;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .main-container .items-container {
@@ -47,10 +47,10 @@
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1.1px;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
-  color: white;
-  opacity: 0.55;
+  color: var(--light-green);
+  opacity: 0.40;
   cursor: pointer;
   width: auto;
   min-width: 110px;
@@ -60,9 +60,6 @@
 
 .main-container .items-container .movable-container .selected {
   opacity: 1;
-  animation-name: font-color-waver;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
 }
 
 .main-container .left-box {
@@ -123,20 +120,6 @@
     width: 70px;
     height: 70px;
     opacity: 0;
-  }
-}
-
-@keyframes font-color-waver {
-  0% {
-    color: var(--light-green)
-  }
-
-  50% {
-    color: var(--green)
-  }
-
-  100% {
-    color: var(--light-green)
   }
 }
 
