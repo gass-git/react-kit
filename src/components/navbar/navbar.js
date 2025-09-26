@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './styles.css'
 import selectionSound from '../../assets/sounds/selection.wav'
 import useSound from 'use-sound'
@@ -21,11 +21,13 @@ export default function Navbar() {
               <div
                 key={link}
                 className={selected != link || "selected"}
-                onClick={handleClick(link)}
+                onClick={() => handleClick(link)}
               >
                 {link}
               </div>
-            ))}
+            )
+            )
+            }
         </div>
       </div>
     </div>
