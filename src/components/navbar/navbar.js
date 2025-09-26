@@ -14,22 +14,18 @@ export default function Navbar() {
   }
 
   return (
-    <div className='wrapper'>
       <div className='main-container'>
         <div className='items-container'>
             {links.map((link) => (
               <div
                 key={link}
-                className={selected != link || "selected"}
+                className={selected !== link || "selected"}
                 onClick={() => handleClick(link)}
               >
                 {link}
               </div>
-            )
-            )
-            }
+            ))}
         </div>
       </div>
-    </div>
   )
 }
