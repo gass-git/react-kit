@@ -7,9 +7,7 @@
 
 .wrapper {
   margin: 0 auto;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 20px;
   min-width: 200px;
   max-width: 780px;
   transition: 300ms;
@@ -19,7 +17,6 @@
   display: flex;
   border-radius: 17px;
   height: 55px;
-  max-width: 780px;
   justify-content: center;
   border: 2px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(0, 0, 0, 0.25);
@@ -32,13 +29,7 @@
   overflow-x: hidden;
 }
 
-.main-container .items-container .movable-container {
-  width: 660px;
-  display: flex;
-  transition: 300ms;
-}
-
-.main-container .items-container .movable-container>div {
+.main-container .items-container>div {
   position: relative;
   overflow: hidden;
   height: 34px;
@@ -58,34 +49,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.main-container .items-container .movable-container .selected {
+.main-container .items-container .selected {
   opacity: 1;
-}
-
-.main-container .left-box {
-  height: 55px;
-  min-width: 41px;
-  line-height: 60px;
-  padding-right: 11px;
-  padding-top: 2px;
-  text-align: right;
-  opacity: 0.3;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.main-container .right-box {
-  height: 58px;
-  min-width: 50px;
-  line-height: 60px;
-  text-align: center;
-  padding-top: 2px;
-  opacity: 0.3;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.main-container .active {
-  opacity: 0.75 !important;
-  cursor: pointer !important;
 }
 
 .ripple {
@@ -99,14 +64,6 @@
   transform: translate(-50%, -50%);
   animation-name: ripple;
   animation-duration: 500ms;
-}
-
-.green {
-  color: var(--light-green);
-}
-
-.white {
-  color: white;
 }
 
 @keyframes ripple {
@@ -123,153 +80,10 @@
   }
 }
 
-@media (min-width:690px) and (max-width: 822px) {
-  .left-box {
-    display: none !important;
-  }
-
-  .right-box {
-    display: none !important;
-  }
+.green {
+  color: var(--light-green);
 }
 
-@media (min-width:665px) and (max-width:689px) {
-  .wrapper {
-    max-width: 635px;
-  }
-
-  .movable-container>div {
-    min-width: 131px !important;
-    max-width: 131px !important;
-  }
-
-  .left-box {
-    display: block !important;
-  }
-
-  .right-box {
-    display: block !important;
-  }
-}
-
-@media (min-width:590px) and (max-width:664px) {
-  .wrapper {
-    max-width: 560px;
-  }
-
-  .movable-container>div {
-    min-width: 111px !important;
-    max-width: 111px !important;
-  }
-}
-
-@media (min-width:500px) and (max-width:589px) {
-  .wrapper {
-    max-width: 465px;
-  }
-
-  .movable-container>div {
-    min-width: 121px !important;
-    max-width: 121px !important;
-  }
-}
-
-@media (min-width:432px) and (max-width:499px) {
-  .wrapper {
-    max-width: 403px;
-  }
-
-  .movable-container>div {
-    min-width: 98px !important;
-    max-width: 98px !important;
-  }
-}
-
-@media (min-width:410px) and (max-width:431px) {
-  .movable-container>div {
-    min-width: 133px !important;
-    max-width: 133px !important;
-  }
-}
-
-@media screen and (max-width:409px) {
-  .wrapper {
-    padding-right: 5px;
-    padding-left: 5px;
-  }
-}
-
-@media (min-width:385px) and (max-width:409px) {
-  .movable-container>div {
-    min-width: 130px !important;
-    max-width: 130px !important;
-  }
-}
-
-@media (min-width:370px) and (max-width:384px) {
-
-  .movable-container>div {
-    min-width: 125px !important;
-    max-width: 125px !important;
-  }
-}
-
-@media (min-width:350px) and (max-width:369px) {
-  .movable-container>div {
-    min-width: 119px !important;
-    max-width: 119px !important;
-  }
-}
-
-@media (min-width:320px) and (max-width:349px) {
-
-  .movable-container>div {
-    min-width: 107px !important;
-    max-width: 107px !important;
-  }
-}
-
-@media (min-width:300px) and (max-width:319px) {
-  .movable-container>div {
-    min-width: 190px !important;
-    max-width: 190px !important;
-  }
-}
-
-@media (min-width:275px) and (max-width:299px) {
-  .movable-container>div {
-    min-width: 160px !important;
-    max-width: 160px !important;
-  }
-}
-
-@media (min-width:260px) and (max-width:275px) {
-  .movable-container>div {
-    min-width: 145px !important;
-    max-width: 145px !important;
-  }
-}
-
-@media (min-width:250px) and (max-width:259px) {
-  .movable-container>div {
-    min-width: 130px !important;
-    max-width: 130px !important;
-  }
-}
-
-@media screen and (max-width:249px) {
-  .wrapper {
-    min-width: 190px;
-    max-width: 190px;
-  }
-
-  .main-container .items-container .movable-container {
-    margin-top: 22px;
-  }
-
-  .movable-container>div {
-    font-size: 12px !important;
-    min-width: 95px !important;
-    max-width: 95px !important;
-  }
+.white {
+  color: white;
 }
