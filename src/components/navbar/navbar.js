@@ -8,7 +8,7 @@ export default function Navbar() {
   const [selected, setSelected] = useState(links[0])
   const [playSound] = useSound(selectionSound, { volume: 0.9 })
 
-  function handleClick(link, e) {
+  function handleClick(link) {
     setSelected(link)
     playSound()
   }
@@ -17,18 +17,15 @@ export default function Navbar() {
     <div className='wrapper'>
       <div className='main-container'>
         <div className='items-container'>
-            {
-              links.map((link) => (
-                  <div
-                    key={link}
-                    className={selected != link || "selected"}
-                    onClick={(e) => handleClick(link, e)}
-                  >
-                    {link}
-                  </div>
-                )
-              )
-            }
+            {links.map((link) => (
+              <div
+                key={link}
+                className={selected != link || "selected"}
+                onClick={handleClick(link)}
+              >
+                {link}
+              </div>
+            ))}
         </div>
       </div>
     </div>
