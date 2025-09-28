@@ -7,26 +7,21 @@ export default function Navbar() {
   const links = ['home', 'skills', 'projects', 'activity', 'about', 'blog']
   const [selected, setSelected] = useState(links[0])
   const [playSound] = useSound(selectionSound, { volume: 0.9 })
-  const [showRipple, setShowRipple] = useState(false)
-  const [coords, setCoords] = useState({x: 0, y: 0})
+  const [rippleAnimation, setRippleAnimation] = useState({coords: {x: 0, y: 0}, isActive: false})
 
+  /*
+  * In order for the CSS animation to be shown, the animation class has to rapidly be removed
+  * and re-inserted into the DOM.
+  */
+  function rippleEffect(e){
+    // Position of the container (in the viewport) from where the event has been passed.
+    const rect = e.currentTarget.getBoundingClientRect();
 
-  function handleClick(link, nativeEvent) {
-    setSelected(link)
-    playSound()
-    rippleEffect(nativeEvent)
-  }
+    // Relative position within the container. 
+    const [x,y] = [e.clientX - rect.left, e.clientY - rect.top];
 
-  // TODO: explore the implementation of using "requestAnimationFrame" instead of the hacky setTimeout() 
-  // implementation for reseting the animation.
-
-  
-  function rippleEffect(nativeEvent){
-    // React first commits the “false” state, the browser notices the class was removed, and 
-    // when you re-add it, the CSS animation runs again.
-    setCoords({x: nativeEvent.offsetX, y: nativeEvent.offsetY})
-    setShowRipple(false)
-    setTimeout(() => {setShowRipple(true)},0) 
+    setRippleAnimation({coords: {x: x, y: y}, isActive: false})
+    requestAnimationFrame(() => {setRippleAnimation(prev => ({ ...prev, isActive: true }))})
   }
 
   return (
@@ -36,16 +31,17 @@ export default function Navbar() {
               <div
                 key={link}
                 className={selected !== link || "selected"}
-                onClick={(e) => handleClick(link, e.nativeEvent)}
+                onClick={(e) => {
+                  setSelected(link)
+                  playSound()
+                  rippleEffect(e)
+                }}
               >
-                {
-                  showRipple && selected === link ? 
+                {selected !== link ||
                   <div 
-                    className='ripple' 
-                    style={{ left: `${coords.x}px`, top: `${coords.y}px` }}
-                  /> 
-                  :
-                  null
+                    className={!rippleAnimation.isActive || 'ripple'} 
+                    style={{ left: `${rippleAnimation.coords.x}px`, top: `${rippleAnimation.coords.y}px` }}
+                  />
                 }
                 {link}
               </div>
