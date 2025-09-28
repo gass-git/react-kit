@@ -2,16 +2,16 @@ import { useState } from 'react'
 import './styles.css'
 import selectionSound from '../../assets/sounds/selection.wav'
 import useSound from 'use-sound'
+import { Link } from 'react-router-dom'
 
-export default function Navbar() {
-  const links = ['home', 'skills', 'projects', 'activity', 'about', 'blog']
-  const [selected, setSelected] = useState(links[0])
+export default function Navbar({ links }) {
+  const [selected, setSelected] = useState(links[0].name)
   const [playSound] = useSound(selectionSound, { volume: 0.9 })
   const [rippleAnimation, setRippleAnimation] = useState({coords: {x: 0, y: 0}, isActive: false})
 
   /*
-  * In order for the CSS animation to be shown, the animation class has to rapidly be removed
-  * and re-inserted into the DOM.
+  * In order for the CSS animation to be shown, the animation class has to rapidly
+  * be removed and re-inserted into the DOM.
   */
   function rippleEffect(e){
     // Position of the container (in the viewport) from where the event has been passed.
@@ -28,23 +28,24 @@ export default function Navbar() {
       <div className='main-container'>
         <div className='items-container'>
             {links.map((link) => (
-              <div
-                key={link}
-                className={selected !== link || "selected"}
-                onClick={(e) => {
-                  setSelected(link)
-                  playSound()
-                  rippleEffect(e)
-                }}
-              >
-                {selected !== link ||
-                  <div 
-                    className={!rippleAnimation.isActive || 'ripple'} 
-                    style={{ left: `${rippleAnimation.coords.x}px`, top: `${rippleAnimation.coords.y}px` }}
-                  />
-                }
-                {link}
-              </div>
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={selected !== link.name || 'selected'}
+                  onClick={(e) => {
+                    setSelected(link.name)
+                    playSound()
+                    rippleEffect(e)
+                  }}
+                >
+                  {selected !== link.name ||
+                    <div 
+                      className={!rippleAnimation.isActive || 'ripple'} 
+                      style={{ left: `${rippleAnimation.coords.x}px`, top: `${rippleAnimation.coords.y}px` }}
+                    />
+                  }
+                  {link.name}
+                </Link>
             ))}
         </div>
       </div>
