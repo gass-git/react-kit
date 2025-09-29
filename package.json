@@ -1,6 +1,14 @@
 {
-  "name": "top-navbar",
-  "version": "0.1.0",
+  "name": "@gass-npm/react-kit",
+  "version": "0.0.1",
+  "author": "gass-git",
+  "description": "React UI components",
+  "license": "MIT",
+  "keywords": [],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/gass-git/react-kit"
+    },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
