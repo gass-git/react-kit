@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import './styles.css'
-import selectionSound from '../../assets/sounds/selection.wav'
+import './Navbar.css'
+import selectionSound from './selection.wav'
 import useSound from 'use-sound'
 import { Link } from 'react-router-dom'
 
