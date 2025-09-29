@@ -8,7 +8,7 @@
 .main-container {
   display: flex;
   border-radius: 17px;
-  height: 55px;
+  height: 45px;
   justify-content: center;
   border: 2px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(0, 0, 0, 0.25);
@@ -19,6 +19,7 @@
   display: flex;
   justify-content: left;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .main-container .items-container>* {
@@ -26,7 +27,7 @@
   overflow: hidden;
   text-decoration-line: none;
   height: 34px;
-  padding-top: 21px;
+  padding-top: 16px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1.1px;
@@ -34,7 +35,7 @@
   font-weight: 500;
   text-transform: uppercase;
   color: var(--light-green);
-  opacity: 0.40;
+  opacity: 0.5;
   cursor: pointer;
   width: auto;
   min-width: 110px;
@@ -44,6 +45,10 @@
 
 .main-container .items-container .selected {
   opacity: 1;
+}
+
+.main-container .items-container .not-selected:hover {
+  opacity: 0.8;
 }
 
 .ripple {

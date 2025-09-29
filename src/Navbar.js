@@ -31,7 +31,7 @@ export default function Navbar({ links }) {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={selected !== link.name || 'selected'}
+                  className={selected === link.name ? 'selected' : 'not-selected'}
                   onClick={(e) => {
                     setSelected(link.name)
                     playSound()
