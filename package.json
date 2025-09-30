@@ -1,6 +1,7 @@
 {
   "name": "@gass-npm/react-kit",
   "version": "0.0.1",
+  "main": "main.js",
   "author": "gass-git",
   "description": "React UI components",
   "license": "MIT",
