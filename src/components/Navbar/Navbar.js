@@ -5,7 +5,7 @@ import useSound from 'use-sound'
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 
-export default function Navbar({ links }) {
+export function Navbar({ links }) {
   const [selected, setSelected] = useState(links[0])
   const [playSound] = useSound(selectionSound, { volume: 0.9 })
   const [rippleAnimation, setRippleAnimation] = useState({coords: {x: 0, y: 0}, isActive: false})

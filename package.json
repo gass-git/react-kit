@@ -6,37 +6,31 @@
   "description": "React UI components",
   "license": "MIT",
   "keywords": [],
+  "type": "module",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/gass-git/react-kit"
-    },
+    "type": "git",
+    "url": "https://github.com/gass-git/react-kit"
+  },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "react-responsive": "^10.0.1",
-    "react-router-dom": "^7.9.3",
     "use-sound": "^5.0.0"
   },
-  "devDependencies": {
-    "react-scripts": "^5.0.1"
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.9.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-url": "^8.0.2",
+    "rollup": "^4.52.3",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
